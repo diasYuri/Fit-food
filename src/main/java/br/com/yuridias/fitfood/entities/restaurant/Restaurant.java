@@ -1,8 +1,6 @@
 package br.com.yuridias.fitfood.entities.restaurant;
 
-import br.com.yuridias.fitfood.entities.Location;
 import lombok.Data;
-import org.hibernate.annotations.ColumnTransformer;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -25,8 +23,8 @@ public class Restaurant {
     @Column(unique = true, nullable = false)
     private String email;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    private Location localization;
+    private Long latitude;
+    private Long longitude;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Product> products;
