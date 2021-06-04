@@ -1,1 +1,3 @@
 # Fit-food
+
+```mvn run```
